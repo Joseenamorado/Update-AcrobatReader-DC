@@ -1,7 +1,4 @@
-﻿<#
-.ABSOLUTEPARSE True
---------------------------------------------------------------------------------------------------------------------
-#>
+﻿<#by. Jose R.#>
 
 $validatepath = Test-Path "C:\Program Files (x86)\Adobe\Acrobat Reader DC"
 if($validatepath = $true)
