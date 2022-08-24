@@ -1,4 +1,11 @@
-﻿<#by. Jose R.#>
+﻿<# En la parte de descarga e instalacion de Acrobat (al final del codigo), sera necesario unicamente actualizar el numero version e idioma 
+ <<Ejemplo: "https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2200120142/AcroRdrDC2200120142_es_ES.exe">>
+ <<Ejemplo: "https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2200120142/AcroRdrDC2200120142_en_EN.exe">>
+ 
+ In the download and installation part of Acrobat (at the end of the code), it will only be necessary to update the version number and the language
+ <<Example: "https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2200120142/AcroRdrDC2200120142_es_ES.exe">>
+ <<Example: "https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2200120142/AcroRdrDC2200120142_en_EN.exe">>
+ by. Jose R.#>
 
 $validatepath = Test-Path "C:\Program Files (x86)\Adobe\Acrobat Reader DC"
 if($validatepath = $true)
@@ -94,9 +101,9 @@ foreach ($Path in $RegUninstallPaths) {
 
 Sleep -Seconds 10
 
-#Generalizacion de instalacion a todos los equipos 
 #Descargar Acrobat Reader DC
-#Proceso de instslacion de Open office
+#-------------------------------------------------
+#Download Acrobat Reader DC
 $uri = "https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2200120142/AcroRdrDC2200120142_es_ES.exe"
 $out= "c:\AcroRdrDC2200120142_es_ES.exe"
 Invoke-WebRequest -uri $uri -OutFile $out
@@ -106,5 +113,3 @@ Start-Process -FilePath "$out" -ArgumentList "/sAll /rs /msi EULA_ACCEPT=YES"
 Sleep -Seconds 60
 
 Remove-Item "$out"
-
-exit 8
